@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-> Schema package for table **user_consents** (repo: $slug).
+> Schema package for table **user_consents** (repo: `user-consents`).
 
 ## Files
 ```
@@ -55,13 +55,13 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/030_foreign_keys.sql
 ```mermaid
 erDiagram
   USER_CONSENTS {
-    BIGINT id PK
-    BIGINT user_id
-    VARCHAR(50) consent_type
-    VARCHAR(50) version
+    INT id PK
+    INT user_id
+    VARCHAR consent_type
+    VARCHAR version
     BOOLEAN granted
-    DATETIME(6) granted_at
-    VARCHAR(100) source
+    DATETIME granted_at
+    VARCHAR source
     JSON meta
   }
   USER_CONSENTS }o--|| USERS : "user_id"
