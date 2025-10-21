@@ -64,7 +64,7 @@ erDiagram
     VARCHAR(100) source
     JSON meta
   }
-  USER_CONSENTS }o--|| USERS : (user_id)
+  USER_CONSENTS }o--|| USERS : "user_id"
 ```
 
 ## Indexes
