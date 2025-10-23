@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace BlackCat\Database\Packages\UserConsents\Service;
 
-use BlackCat\Core\Database\Database;
+use BlackCat\Core\Database;
 use BlackCat\Database\Packages\UserConsents\Dto\UserConsentDto;
 use BlackCat\Database\Packages\UserConsents\Mapper\UserConsentDtoMapper;
 use BlackCat\Database\Packages\UserConsents\Repository\UserConsentRepository;
