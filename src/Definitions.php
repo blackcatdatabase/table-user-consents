@@ -6,7 +6,7 @@ namespace BlackCat\Database\Packages\UserConsents;
 final class Definitions {
     // --- základní metadata ---
     public static function table(): string { return 'user_consents'; }
-    public static function contractView(): string { return 'v_user_consents_contract'; }
+    public static function contractView(): string { return 'vw_user_consents'; }
     /** @return string[] */
     public static function columns(): array { return [ 'id', 'user_id', 'consent_type', 'version', 'granted', 'granted_at', 'source', 'meta' ]; }
     public static function pk(): string { return 'id'; }
