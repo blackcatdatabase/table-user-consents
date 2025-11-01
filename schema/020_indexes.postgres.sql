@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-postgres.psd1 (map@38d5403)
+-- Auto-generated from schema-map-postgres.psd1 (map@c5e4097)
 -- engine: postgres
 -- table:  user_consents
 CREATE INDEX IF NOT EXISTS idx_user_consents_user ON user_consents (user_id);

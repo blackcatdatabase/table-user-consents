@@ -1,8 +1,8 @@
--- Auto-generated from schema-views-mysql.psd1 (map@38d5403)
+-- Auto-generated from schema-views-mysql.psd1 (map@c5e4097)
 -- engine: mysql
 -- table:  user_consents
 -- Contract view for [user_consents]
-CREATE OR REPLACE SQL SECURITY INVOKER VIEW vw_user_consents AS
+CREATE OR REPLACE ALGORITHM=MERGE SQL SECURITY INVOKER VIEW vw_user_consents AS
 SELECT
   id,
   user_id,
@@ -10,6 +10,6 @@ SELECT
   version,
   granted,
   granted_at,
-  source,
+  `source`,
   meta
 FROM user_consents;
