@@ -1,16 +1,16 @@
-<!-- Auto-generated from schema-map.psd1 @ 6cefe8e (2025-10-22T20:27:41+02:00) -->
+<!-- Auto-generated from schema-map-postgres.psd1 @ 62c9c93 (2025-11-20T21:38:11+01:00) -->
 # Definition – user_consents
 
-Captured consents per user and version.
+Captured consents per user and version. UNIQUE (user_id, consent_type, version).
 
 ## Columns
 | Column | Type | Null | Default | Description | Notes |
 |-------:|:-----|:----:|:--------|:------------|:------|
-| id | BIGINT UNSIGNED | — | — | Surrogate primary key. |  |
-| user_id | BIGINT UNSIGNED | NO | — | User (FK users.id). |  |
+| id | BIGINT | — | AS | Surrogate primary key. |  |
+| user_id | BIGINT | NO | — | User (FK users.id). |  |
 | consent_type | VARCHAR(50) | NO | — | Consent type key. |  |
 | version | VARCHAR(50) | NO | — | Document/policy version string. |  |
 | granted | BOOLEAN | NO | — | Granted flag (true/false). |  |
-| granted_at | DATETIME(6) | NO | — | When consent was recorded (UTC). |  |
+| granted_at | TIMESTAMPTZ(6) | NO | — | When consent was recorded (UTC). |  |
 | source | VARCHAR(100) | YES | — | Source (e.g., web, import). |  |
-| meta | JSON | YES | — | JSON meta (IP, UA, doc hash). |  |
+| meta | JSONB | YES | — | JSON meta (IP, UA, doc hash). |  |

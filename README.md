@@ -2,7 +2,7 @@
 
 ![SQL](https://img.shields.io/badge/SQL-MySQL%208.0%2B-4479A1?logo=mysql&logoColor=white) ![License](https://img.shields.io/badge/license-BlackCat%20Proprietary-red) ![Status](https://img.shields.io/badge/status-stable-informational) ![Generated](https://img.shields.io/badge/generated-from%20schema--map-blue)
 
-<!-- Auto-generated from schema-map.psd1 @ 6cefe8e (2025-10-22T20:27:41+02:00) -->
+<!-- Auto-generated from schema-map-postgres.psd1 @ 62c9c93 (2025-11-20T21:38:11+01:00) -->
 
 > Schema package for table **user_consents** (repo: `user-consents`).
 
@@ -42,14 +42,14 @@ mysql -h 127.0.0.1 -P 3307 -u root -proot app < schema/030_foreign_keys.sql
 ## Columns
 | Column | Type | Null | Default | Extra |
 |-------:|:-----|:----:|:--------|:------|
-| id | BIGINT UNSIGNED | — | — | AUTO_INCREMENT, PK |
-| user_id | BIGINT UNSIGNED | NO | — |  |
+| id | BIGINT | — | AS | PK |
+| user_id | BIGINT | NO | — |  |
 | consent_type | VARCHAR(50) | NO | — |  |
 | version | VARCHAR(50) | NO | — |  |
 | granted | BOOLEAN | NO | — |  |
-| granted_at | DATETIME(6) | NO | — |  |
+| granted_at | TIMESTAMPTZ(6) | NO | — |  |
 | source | VARCHAR(100) | YES | — |  |
-| meta | JSON | YES | — |  |
+| meta | JSONB | YES | — |  |
 
 ## Relationships
 - FK → **users** via (user_id) (ON DELETE CASCADE).
@@ -62,15 +62,15 @@ erDiagram
     VARCHAR consent_type
     VARCHAR version
     BOOLEAN granted
-    DATETIME granted_at
+    TIMESTAMPTZ granted_at
     VARCHAR source
-    JSON meta
+    JSONB meta
   }
   USER_CONSENTS }o--|| USERS : "user_id"
 ```
 
 ## Indexes
-- 1 deferred index statement(s) in schema/020_indexes.sql.
+- 2 deferred index statement(s) in schema/020_indexes.sql.
 
 ## Notes
 - Generated from the umbrella repository **blackcat-database** using `scripts/schema-map.psd1`.
