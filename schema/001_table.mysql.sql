@@ -1,4 +1,4 @@
--- Auto-generated from schema-map-mysql.psd1 (map@db2f8b8)
+-- Auto-generated from schema-map-mysql.psd1 (map@734a489)
 -- engine: mysql
 -- table:  user_consents
 CREATE TABLE IF NOT EXISTS user_consents (
@@ -10,4 +10,4 @@ CREATE TABLE IF NOT EXISTS user_consents (
   granted_at DATETIME(6) NOT NULL,
   source VARCHAR(100) NULL,
   meta JSON NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=DYNAMIC;
