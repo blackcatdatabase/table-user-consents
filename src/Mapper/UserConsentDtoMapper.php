@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class UserConsentDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'user_id' => 'userId', 'consent_type' => 'consentType', 'granted_at' => 'grantedAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'user_id' => 'userId', 'consent_type' => 'consentType', 'version' => 'version', 'granted' => 'granted', 'granted_at' => 'grantedAt', 'source' => 'source', 'meta' => 'meta' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [ 'granted' ];
@@ -39,13 +39,8 @@ final class UserConsentDtoMapper
 
     private static function tz(): DateTimeZone
     {
-        if (self::$tzObj instanceof DateTimeZone) {
-            return self::$tzObj;
-        }
-        try {
+        if (!(self::$tzObj instanceof DateTimeZone)) {
             self::$tzObj = new DateTimeZone(self::TZ);
-        } catch (\Throwable) {
-            self::$tzObj = new DateTimeZone('UTC');
         }
         return self::$tzObj;
     }
