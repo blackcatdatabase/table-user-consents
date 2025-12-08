@@ -7,9 +7,9 @@ Captured consents per user and version. UNIQUE (user_id, consent_type, version).
 | --- | --- | --- | --- | --- |
 | consent_type | VARCHAR(50) | NO |  | Consent type key. |
 | granted | BOOLEAN | NO |  | Granted flag (true/false). |
-| granted_at | TIMESTAMPTZ(6) | NO |  | When consent was recorded (UTC). |
+| granted_at | DATETIME(6) | NO |  | When consent was recorded (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| meta | JSONB | YES |  | JSON meta (IP, UA, doc hash). |
+| meta | JSON | YES |  | JSON meta (IP, UA, doc hash). |
 | source | VARCHAR(100) | YES |  | Source (e.g., web, import). |
 | user_id | BIGINT | NO |  | User (FK users.id). |
 | version | VARCHAR(50) | NO |  | Document/policy version string. |
@@ -57,5 +57,5 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_user_consents | mysql | algorithm=MERGE, security=INVOKER | [packages\user-consents\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/user-consents/schema/040_views.mysql.sql) |
-| vw_user_consents | postgres |  | [packages\user-consents\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/user-consents/schema/040_views.postgres.sql) |
+| vw_user_consents | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_user_consents | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
