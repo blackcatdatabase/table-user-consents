@@ -7,9 +7,9 @@ Captured consents per user and version. UNIQUE (user_id, consent_type, version).
 | --- | --- | --- | --- | --- |
 | consent_type | VARCHAR(50) | NO |  | Consent type key. |
 | granted | BOOLEAN | NO |  | Granted flag (true/false). |
-| granted_at | DATETIME(6) | NO |  | When consent was recorded (UTC). |
+| granted_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO |  | When consent was recorded (UTC). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| meta | JSON | YES |  | JSON meta (IP, UA, doc hash). |
+| meta | mysql: JSON / postgres: JSONB | YES |  | JSON meta (IP, UA, doc hash). |
 | source | VARCHAR(100) | YES |  | Source (e.g., web, import). |
 | user_id | BIGINT | NO |  | User (FK users.id). |
 | version | VARCHAR(50) | NO |  | Document/policy version string. |
