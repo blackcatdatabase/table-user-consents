@@ -1,0 +1,32 @@
+{
+  "tables": {
+    "user_consents": {
+      "columns": {
+        "consent_type": {
+          "strategy": "passthrough"
+        },
+        "granted": {
+          "strategy": "passthrough"
+        },
+        "granted_at": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "meta": {
+          "strategy": "passthrough"
+        },
+        "source": {
+          "strategy": "passthrough"
+        },
+        "user_id": {
+          "strategy": "passthrough"
+        },
+        "version": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
