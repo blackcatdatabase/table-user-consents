@@ -3,16 +3,16 @@
 Captured consents per user and version. UNIQUE (user_id, consent_type, version).
 
 ## Columns
-| Column | Type | Null | Default | Description | Crypto |
-| --- | --- | --- | --- | --- | --- |
-| id | BIGINT | NO |  | Surrogate primary key. |  |
-| user_id | BIGINT | NO |  | User (FK users.id). |  |
-| consent_type | VARCHAR(50) | NO |  | Consent type key. |  |
-| version | VARCHAR(50) | NO |  | Document/policy version string. |  |
-| granted | BOOLEAN | NO |  | Granted flag (true/false). |  |
-| granted_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO |  | When consent was recorded (UTC). |  |
-| source | VARCHAR(100) | YES |  | Source (e.g., web, import). |  |
-| meta | mysql: JSON / postgres: JSONB | YES |  | JSON meta (IP, UA, doc hash). |  |
+| Column | Type | Null | Default | Description |
+| --- | --- | --- | --- | --- |
+| id | BIGINT | NO |  | Surrogate primary key. |
+| user_id | BIGINT | NO |  | User (FK users.id). |
+| consent_type | VARCHAR(50) | NO |  | Consent type key. |
+| version | VARCHAR(50) | NO |  | Document/policy version string. |
+| granted | BOOLEAN | NO |  | Granted flag (true/false). |
+| granted_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO |  | When consent was recorded (UTC). |
+| source | VARCHAR(100) | YES |  | Source (e.g., web, import). |
+| meta | mysql: JSON / postgres: JSONB | YES |  | JSON meta (IP, UA, doc hash). |
 
 ## Engine Details
 
